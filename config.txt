@@ -1,0 +1,22 @@
+# config.txt
+# Hyperparameter configuration for PCF-MSDA
+
+[observation]
+omega = 3          # time observation radius (days)
+
+[thresholds]
+phi = 0.25         # interval change threshold
+tau = 0.6          # domain confidence threshold
+
+[loss_weights]
+lambda_schedule = 2 / (1 + exp(-10 * rho)) - 1
+rho_range = [0, 1]
+
+[model]
+alpha = 0.8
+mu = 0.3
+
+[training]
+epochs = 100
+learning_rate_init = 0.01
+lr_schedule = enabled
